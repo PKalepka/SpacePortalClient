@@ -13,7 +13,11 @@ class App extends React.Component {
   }
 
   render() {
-    return <DashboardContainer />;
+    return (
+      <div className="flex-container">
+        <DashboardContainer />
+      </div>
+    );
   }
 }
 

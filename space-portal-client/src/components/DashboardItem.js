@@ -1,14 +1,19 @@
 import React from "react";
-import { connect } from "react-redux";
+import "../css/components/DashboardItem.css";
 
-class DashboardItem extends React.Component {
+export default class DashboardItem extends React.Component {
   render() {
-    return <h3>{JSON.stringify(this.props.feed)}</h3>;
+    var item = this.props.item;
+    return (
+      <li className="flex-listitem">
+        <div>
+          <span>{item.id}</span>
+          <span>{item.reference_id}</span>
+          <span>{item.name}</span>
+          <span>{item.is_potentially_hazardous.toString()}</span>
+          <span>{item.date}</span>
+        </div>
+      </li>
+    );
   }
 }
-
-const mapStateToProps = (state) => ({
-  feed: state.feed,
-});
-
-export default connect(mapStateToProps)(DashboardItem);

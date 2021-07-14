@@ -7,11 +7,11 @@ export default class DashboardItem extends React.Component {
     return (
       <li className="flex-listitem">
         <div>
-          <span>{item.id}</span>
+          <span>{item.id.toString()}</span>
           <span>{item.reference_id}</span>
           <span>{item.name}</span>
           <span>{item.is_potentially_hazardous.toString()}</span>
-          <span>{item.date}</span>
+          <span><a href={item.nasa_jpl_url}>NASA JPL URL</a></span>
         </div>
       </li>
     );

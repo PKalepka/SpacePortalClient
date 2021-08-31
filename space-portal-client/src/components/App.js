@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { restoreState } from "../redux/actions/actionCreators";
 import feedService from "../services";
 import DashboardContainer from "./DashboardContainer";
+import Header from "./Header";
 import "../css/components/App.css";
 
 class App extends React.Component {
@@ -15,6 +16,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="flex-container">
+        <Header />
         <DashboardContainer />
       </div>
     );

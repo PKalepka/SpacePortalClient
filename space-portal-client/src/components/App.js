@@ -1,35 +1,33 @@
-import React from "react";
-import { connect } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { restoreState } from "../redux/actions/actionCreators";
-import feedService from "../services";
+import getFeedData from "../services/feedService";
 import DashboardContainer from "./DashboardContainer";
 import Header from "./Header";
 import "../css/components/App.css";
 
-class App extends React.Component {
-  async componentDidMount() {
-    feedService().then((data) => {
-      this.props.restoreState(data);
-    });
-  }
-
-  render() {
-    return (
-      <div className="flex-container">
-        <Header />
-        <DashboardContainer />
-      </div>
-    );
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    restoreState: (feed) => {
-      var action = restoreState(feed);
-      dispatch(action);
-    },
+const App = () => {
+  const dispatch = useDispatch();
+  const restoreDispatch = (feed) => {
+    var action = restoreState(feed);
+    dispatch(action);
   };
+
+  useEffect(() => {
+    async function fetchMyAPI() {
+      var data = await getFeedData();
+      restoreDispatch(data);
+    }
+
+    fetchMyAPI();
+  });
+
+  return (
+    <div className="flex-container">
+      <Header />
+      <DashboardContainer />
+    </div>
+  );
 };
 
-export default connect(null, mapDispatchToProps)(App);
+export default App;

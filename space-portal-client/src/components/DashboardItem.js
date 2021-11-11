@@ -1,7 +1,7 @@
 import React from "react";
 import "../css/components/DashboardItem.css";
 
-export default function DashboardItem(props) {
+const DashboardItem = (props) => {
   var item = props.item;
   return (
     <li className="flex-listitem">
@@ -17,3 +17,5 @@ export default function DashboardItem(props) {
     </li>
   );
 }
+
+export default DashboardItem;

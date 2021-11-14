@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import DashboardItem from "./DashboardItem";
-import "../css/components/DashboardContainer.css";
+import "./DashboardContainer.css";
 
 const DashboardContainer = () => {
   const asteroids = useSelector((state) => state.feed);

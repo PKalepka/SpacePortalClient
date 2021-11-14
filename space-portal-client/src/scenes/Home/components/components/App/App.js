@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { restoreState } from "../redux/actions/actionCreators";
-import getFeedData from "../services/feedService";
-import DashboardContainer from "./DashboardContainer";
-import Header from "./Header";
-import "../css/components/App.css";
+import { restoreState } from "../../../services/actionCreators";
+import getFeedData from "../../../services/feedService";
+import DashboardContainer from "../../Dashboard/DashboardContainer";
+import Header from "../../../../../components/Header/Header";
+import "./App.css";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -24,7 +24,7 @@ const App = () => {
 
   return (
     <div className="flex-container">
-      <Header />
+      <Header text='Nearest to Earth asteroids'/>
       <DashboardContainer />
     </div>
   );

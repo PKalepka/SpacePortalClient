@@ -1,5 +1,5 @@
-import { RESTORE_STATE } from "../actions/actionTypes";
-import restoreStateReducer from "./restoreStateReducer";
+import { RESTORE_STATE } from "../scenes/Home/services/actionTypes";
+import restoreStateReducer from "../scenes/Home/services/restoreStateReducer";
 
 const rootReducer = (state, action) => {
   switch (action.type) {

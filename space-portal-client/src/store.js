@@ -1,5 +1,5 @@
 import { createStore } from "redux";
-import rootReducer from "./reducers/rootReducer";
+import rootReducer from "./services/rootReducer";
 
 const initialState = {
   feed: [],

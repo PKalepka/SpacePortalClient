@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/components/DashboardItem.css";
+import "./DashboardItem.css";
 
 const DashboardItem = (props) => {
   var item = props.item;

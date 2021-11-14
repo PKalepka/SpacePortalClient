@@ -1,10 +1,10 @@
 import React from "react";
-import "../css/components/Header.css";
+import "./Header.css";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <div className="flex-header">
-      <h2>Nearest to Earth asteroids</h2>
+      <h2>{props.text}</h2>
     </div>
   );
 };

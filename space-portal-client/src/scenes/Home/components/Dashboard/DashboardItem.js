@@ -6,7 +6,7 @@ const DashboardItem = (props) => {
   return (
     <li className="flex-listitem">
       <div>
-        <span>{item.id.toString()}</span>
+        <span>{item.id ? item.id.toString() : "*"}</span>
         <span>{item.reference_id}</span>
         <span>{item.name}</span>
         <span>{item.is_potentially_hazardous.toString()}</span>

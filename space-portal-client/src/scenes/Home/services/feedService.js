@@ -1,7 +1,9 @@
 import { apiClient } from "../../../services/apiService";
 
 function getAsteroidFeedUrl(startDate, endDate) {
-  return `neo/feed`;
+  return !startDate || !endDate
+    ? `neo/feed`
+    : `neo/feed?start_date=${startDate.getTime()}&end_date=${endDate.getTime()}`;
 }
 
 async function getFeed(startDate, endDate) {

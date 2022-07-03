@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { restoreState } from "../../../services/actionCreators";
-import getFeedData from "../../../services/feedService";
+import getFeed from "../../../services/feedService";
 import DashboardContainer from "../../Dashboard/DashboardContainer";
 import Header from "../../../../../components/Header/Header";
+import DateRange from "../../DateRange/DateRange";
 import "./App.css";
 
 const App = () => {
@@ -15,7 +16,7 @@ const App = () => {
 
   useEffect(() => {
     async function fetchMyAPI() {
-      var data = await getFeedData();
+      var data = await getFeed();
       restoreDispatch(data);
     }
 
@@ -24,7 +25,8 @@ const App = () => {
 
   return (
     <div className="flex-container">
-      <Header text='Nearest to Earth asteroids'/>
+      <Header text="Nearest to Earth asteroids" />
+      <DateRange />
       <DashboardContainer />
     </div>
   );

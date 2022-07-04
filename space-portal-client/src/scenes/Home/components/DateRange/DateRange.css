@@ -1,0 +1,13 @@
+.flex-daterange {
+  display: flex;
+}
+
+.flex-datepicker {
+  display: flex;
+  flex: 1;
+  justify-content: flex-start;
+}
+
+.flex-datepicker > strong {
+  margin-right: 5%;
+}

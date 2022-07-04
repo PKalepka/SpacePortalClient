@@ -5,6 +5,7 @@ import DatePicker from "react-datepicker";
 
 import getFeed from "../../services/feedService";
 import "react-datepicker/dist/react-datepicker.css";
+import "./DateRange.css";
 
 const DateRange = () => {
   const state = useSelector((state) => state);
@@ -32,22 +33,32 @@ const DateRange = () => {
   };
 
   return (
-    <div>
-      <DatePicker
-        selected={startDate}
-        onChange={(date) => startDateDispatch(date)}
-        selectsStart
-        startDate={startDate}
-        endDate={endDate}
-      />
-      <DatePicker
-        selected={endDate}
-        onChange={(date) => endDateDispatch(date)}
-        selectsEnd
-        startDate={startDate}
-        endDate={endDate}
-        minDate={startDate}
-      />
+    <div className="flex-daterange">
+      <div className="flex-datepicker">
+        <strong>From:</strong>
+        <div>
+          <DatePicker
+            selected={startDate}
+            onChange={(date) => startDateDispatch(date)}
+            selectsStart
+            startDate={startDate}
+            endDate={endDate}
+          />
+        </div>
+      </div>
+      <div className="flex-datepicker">
+        <strong>To:</strong>
+        <div>
+          <DatePicker
+            selected={endDate}
+            onChange={(date) => endDateDispatch(date)}
+            selectsEnd
+            startDate={startDate}
+            endDate={endDate}
+            minDate={startDate}
+          />
+        </div>
+      </div>
     </div>
   );
 };
